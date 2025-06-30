@@ -1,0 +1,30 @@
+<div class="table-container">
+    <table class="empleado-table">
+        <thead>
+            <tr>
+                <th>Núm </th>
+                <th>Nombre </th>
+                <th>Correo </th>
+                <th>Teléfono </th>
+                <th>Fecha Nacimiento </th>
+                <th>Sexo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let empleado of empleados">
+                <td>{{ empleado.idEmpleado }}</td>
+                <td>{{ empleado.nombre }}</td>
+                <td>{{ empleado.correo }}</td>
+                <td>{{ empleado.telefono }}</td>
+                <td>{{ empleado.fechaNacimiento }}</td>
+                <td>{{ empleado.sexo }}</td>
+                <td>
+                    <button class="delete-btn" (click)="eliminarEmpleado(empleado.idEmpleado)">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

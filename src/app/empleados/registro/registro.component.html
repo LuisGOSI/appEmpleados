@@ -1,0 +1,52 @@
+<div class="dropdown-container">
+    <button class="dropdown-toggle" (click)="toggleDropdown()">
+        {{ mostrarDropdown ? 'Ocultar formulario' : 'Mostrar formulario' }}
+    </button>
+    
+    <div class="dropdown-content" *ngIf="mostrarDropdown">
+        <form (submit)="agregarEmpleado()" class="registro-fieldset">
+            <legend>Registro</legend>
+
+            <div class="form-group">
+                <label for="idEmpleado">Núm. Empleado:</label>
+                <input type="text" id="idEmpleado" name="idEmpleado" class="form-control" [(ngModel)]="nuevo.idEmpleado" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" class="form-control" name="nombre" [(ngModel)]="nuevo.nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" class="form-control" name="correo" [(ngModel)]="nuevo.correo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" class="form-control" name="telefono" [(ngModel)]="nuevo.telefono" required>
+            </div>
+
+            <div class="form-group date-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control date-input"
+                    [(ngModel)]="nuevo.fechaNacimiento" required>
+            </div>
+
+            <div class="form-group radio-group">
+                <label>Sexo:</label>
+                <div class="radio-options">
+                    <label class="radio-label">
+                        <input type="radio" name="sexo" value="Masculino" [(ngModel)]="nuevo.sexo">
+                        Masculino
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="sexo" value="Femenino" [(ngModel)]="nuevo.sexo">
+                        Femenino
+                    </label>
+                </div>
+                <button type="submit" class="add-btn">Agregar</button>
+            </div>
+        </form>
+    </div>
+</div>
